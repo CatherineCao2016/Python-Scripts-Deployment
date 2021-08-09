@@ -4,6 +4,8 @@ print("hello world")
 # git push -u origin master
 # or using UI
 
+
+
 from project_lib import Project
 project = Project.access()
 
@@ -27,7 +29,14 @@ query = 'SELECT * FROM "JPF66625"."CREDITDATA"'
 data_df_1 = pd.read_sql_query(query, con=DB2onCloud_connection)
 data_df_1.head()
 
-project.save_data("save_from_jupyterlab_as_job.csv", data_df_1.to_csv(index=False))
-
-
+import sys
+if len(sys.argv) > 0:
+    file_name = sys.argv[0]
+else:
+    from datetime import datetime
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    file_name = current_time.replace(":", "_") + ".csv"
+    
+project.save_data(file_name, data_df_1.to_csv(index=False))
 
