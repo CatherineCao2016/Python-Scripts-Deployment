@@ -31,7 +31,7 @@ data_df_1.head()
 
 import sys
 if len(sys.argv) > 0:
-    file_name = sys.argv[0]
+    file_name = sys.argv[1]
     print(file_name)
 else:
     from datetime import datetime
