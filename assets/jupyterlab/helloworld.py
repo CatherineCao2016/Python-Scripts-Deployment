@@ -32,11 +32,13 @@ data_df_1.head()
 import sys
 if len(sys.argv) > 0:
     file_name = sys.argv[0]
+    print(file_name)
 else:
     from datetime import datetime
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     file_name = current_time.replace(":", "_") + ".csv"
+    print(file_name)
     
 project.save_data(file_name, data_df_1.to_csv(index=False))
 
