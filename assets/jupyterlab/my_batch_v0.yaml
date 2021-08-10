@@ -1,0 +1,6 @@
+name: batch_hello
+
+base: default_py3.7_opence
+    
+file:
+    - my_batch_hello.py
