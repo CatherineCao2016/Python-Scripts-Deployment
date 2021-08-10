@@ -1,0 +1,8 @@
+
+name: lazy_env
+    
+base: default_py3.7
+    
+files:
+    - ./      # use all files in my directory including subdirectories
+    
